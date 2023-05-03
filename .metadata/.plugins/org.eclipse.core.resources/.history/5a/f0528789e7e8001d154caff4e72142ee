@@ -1,0 +1,28 @@
+package it.epicode.be;
+
+public class Helloworld {
+
+public static void main (String[] args)
+		{
+		System.out.println("this is my frist epicode java project! ");
+		moltiplica(10,20);
+		}
+
+
+	public static int moltiplica(int n1, int n2)
+	{
+		return n2*n1;
+	 
+	}
+
+
+
+
+
+
+
+
+}
+
+
+
