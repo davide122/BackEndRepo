@@ -18,6 +18,7 @@ public class AudioMethod {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Ciao, sembra che il volume è al massimo puoi provare ad abbassarlo!");
 			volume = sc.nextInt();
+			System.out.print("adesso il volume è di "+ volume);
 		}
 	}
 	
@@ -26,6 +27,7 @@ public class AudioMethod {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Ciao, sembra che il volume è al minimo puoi provare ad alzarlo! scegli un volume da 0 a 10");
 			volume = sc.nextInt();
+			System.out.print("adesso il volume è di "+ volume);
 		}
 	}
 }
