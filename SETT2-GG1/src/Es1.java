@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 public class Es1 {
 	int[] array;
+	 static Scanner sc = new Scanner(System.in);
+	 
 public Es1(){
-	
 
 	this.array=new int[5];
 	System.out.println("ciao ei");
@@ -11,31 +12,31 @@ public Es1(){
 	int max = 10;
 
 	this.array= new int[5];
-	for(int i = 0; i<max;i++) {
-		array[0]=(int)(Math.random() * (max - min + 1)) + min;
-		array[1]=(int)(Math.random() * (max - min + 1)) + min;
-		array[2]=(int)(Math.random() * (max - min + 1)) + min;
-		array[3]=(int)(Math.random() * (max - min + 1)) + min;
-		array[4]=(int)(Math.random() * (max - min + 1)) + min;
-	}
+	
 	for(int i = 0; i<array.length;i++) {
-		System.out.println(array[i]);
+		array[i]=(int)(Math.random() * (max - min + 1)) + min;
+		System.out.println(array[i]+" "+"di indice"+" "+i);
 	}
-	 
+	legginumeropos(array);
+
+
+	 	
+}
+public static void legginumeropos(int array[]) {
+	int numero, posizione;
 	 boolean stop = false;
 	 do {
+		 System.out.println("ciao, premi zero per uscire.");
+		 int uscita = sc.nextInt();
+		 if(uscita==0) {
+			 stop=true;
+		 }
 		  try {
-			  Scanner sc = new Scanner(System.in);
-				 System.out.println("ciao, cambia il valore dell'array 0");
-				 int valore1 = sc.nextInt();
-				 array[0]=valore1;
 					for(int i = 0; i<array.length;i++) {
 						System.out.println(array[i]);
 					}
 					 
-					 if(valore1==0) {
-						 stop=true;
-					 }
+					 
 		  } 
 		  catch(Exception e) {
 			  System.out.print("hai inserito un imput che non accetto accetto solo numeri interi!");
@@ -47,8 +48,6 @@ public Es1(){
 		
 		 
 	 }while(!stop);
-	 	
 }
-
 
 }

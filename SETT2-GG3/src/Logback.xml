@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="Console_Output" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  
+  
+  
+  <appender name="File_Output" class="ch.qos.logback.core.FileAppender">
+  <File>file.log</File>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+   <root level="debug">
+    <appender-ref ref="Console_Output" />
+    <appender-ref ref="File_Output"/>
+  </root>
+</configuration>
+

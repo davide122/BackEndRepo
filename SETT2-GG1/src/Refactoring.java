@@ -1,4 +1,4 @@
-
+/*
 public class Refactoring {
 	public class ContoCorrente {
 		String titolare;
@@ -58,7 +58,7 @@ public class Refactoring {
 				conto1.preleva(1750.5);
 
 				System.out.println("Saldo conto: " + conto1.restituisciSaldo());
-			} catch (BancaException e) {
+			} catch (Exception e) {
 				System.out.println("Errore durante il prelievo: " + e);
 				e.printStackTrace();
 			}
@@ -72,14 +72,14 @@ public class Refactoring {
 
 				conto2.stampaSaldo();
 
-			} catch (BancaException e) {
+			} catch (Exception e) {
 				System.out.println("Errore durante il prelievo: " + e);
 				e.printStackTrace();
 			}
 		}
 	}
 	}
+	*/
 	
 	
-	
-}
+
