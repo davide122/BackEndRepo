@@ -682,3 +682,5 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: markup not 
 2023-05-12 11:25:35,460 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\david\eclipse-workspace\ProjectWeek2\src\main\resources
 2023-05-12 11:25:36,734 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date
 2023-05-12 11:25:36,739 [Worker-8: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2023-05-12 11:25:36,740 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\david\eclipse-workspace\ProjectWeek2\src\test\resources
+2023-05-12 11:25:36,746 [Worker-8: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - No sources to compile

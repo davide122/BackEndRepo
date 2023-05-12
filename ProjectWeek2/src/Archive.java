@@ -50,17 +50,33 @@ public class Archive {
 			
 		archive.get(AnnoPubblicazione);
 		System.out.println("*******Search Date ********");
-		System.out.println(archive);
-		if(archive.get(AnnoPubblicazione) != null) {
-		System.out.println("elemento trovato"+" " + archive.get(AnnoPubblicazione));	
+		if(archive.containsKey(AnnoPubblicazione)!=false) {
+		System.out.println("elemento trovato"+" "+archive.containsKey(AnnoPubblicazione) );	
 		}else {
-			System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + AnnoPubblicazione);	
+			System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + archive.containsKey(AnnoPubblicazione));	
 		}
 		
 		}catch(Exception a){
-			System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + AnnoPubblicazione);	
+			System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + archive.containsKey(AnnoPubblicazione));	
 		}
 		
+	}
+	
+	public void SearchAuthor(String autore) {
+		try {
+			
+			archive.get(autore);
+			System.out.println("*******Search Author ********");
+			
+			if(archive.get(autore) != null) {
+			System.out.println("elemento trovato"+" " + archive.get(autore));	
+			}else {
+				System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + autore);	
+			}
+			
+			}catch(Exception a){
+				System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + autore);	
+			}
 	}
 	
 	
