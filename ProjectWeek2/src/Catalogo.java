@@ -42,7 +42,7 @@ public String getAnnoPubblicazione() {
 }
 
 public void setAnnoPubblicazione(String AnnoPubblicazione) {
-	AnnoPubblicazione = AnnoPubblicazione;
+	this.AnnoPubblicazione = AnnoPubblicazione;
 }
 
 public int getNumeroPagine() {

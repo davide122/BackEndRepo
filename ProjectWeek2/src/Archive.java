@@ -1,8 +1,13 @@
 import java.util.Map;
-
+import java.util.stream.Collectors;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
+import org.apache.commons.io.FileUtils;
+import java.util.ArrayList;
 public class Archive {
-
+	static File file = new File("SaveCV/saveo.txt");
 	private Map<String, Catalogo> archive;
 
 	public  Archive() {
@@ -27,9 +32,7 @@ public class Archive {
 	
 	public void Search(String ISBN) {
 		try {
-			
-		archive.get(ISBN);
-		System.out.println("*******Search element ********");
+			System.out.println("*******Search element ********");
 		System.out.println(archive);
 		if(archive.get(ISBN) != null) {
 		System.out.println("elemento trovato"+" " + archive.get(ISBN));	
@@ -47,40 +50,44 @@ public class Archive {
 
 	public void SearchDate(String AnnoPubblicazione) {
 		try {
-			
-		archive.get(AnnoPubblicazione);
-		System.out.println("*******Search Date ********");
-		if(archive.containsKey(AnnoPubblicazione)!=false) {
-		System.out.println("elemento trovato"+" "+archive.containsKey(AnnoPubblicazione) );	
-		}else {
-			System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + archive.containsKey(AnnoPubblicazione));	
+			System.out.println("*******Search  element by date ********");
+		 List<Catalogo> found = archive.values().stream()
+			        .filter(Archive -> Archive.getAnnoPubblicazione().equals(AnnoPubblicazione))
+			        .collect(Collectors.toList());
+		 if(found.isEmpty()) {
+			 System.out.println("errore nella ricerca");
+		 }else {
+			 		System.out.println(found);
+		 }
+		}catch(Exception o){
+			 System.out.println("errore nell'inserimento");
 		}
-		
-		}catch(Exception a){
-			System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + archive.containsKey(AnnoPubblicazione));	
-		}
-		
 	}
 	
-	public void SearchAuthor(String autore) {
+	
+	
+	
+	public List<Libri> SearchAuthor(String autore) {
+		  return archive.values().stream()
+	        .filter(Archive -> Archive instanceof Libri && ((Libri) Archive).getAutore() != null && ((Libri) Archive).getAutore().equals(autore))
+	        .map(Archive -> (Libri) Archive)
+	        .collect(Collectors.toList());
+		 
+	
+	}
+	
+	
+	public void SaveData() {
 		try {
-			
-			archive.get(autore);
-			System.out.println("*******Search Author ********");
-			
-			if(archive.get(autore) != null) {
-			System.out.println("elemento trovato"+" " + archive.get(autore));	
-			}else {
-				System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + autore);	
-			}
-			
-			}catch(Exception a){
-				System.out.println("Mi dispiace Non ho trovato nulla con questa chiave" + autore);	
-			}
+	        List<String> values = new ArrayList<>();
+	        for (Catalogo catalogo : archive.values()) {
+	            values.add(catalogo.toString());
+	        }
+	        FileUtils.writeLines(file, values);
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
-	
-	
-	
 	
 	
 }

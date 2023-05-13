@@ -1,0 +1,3 @@
+Riviste [periodicita=null]
+Catalogo [ISBN=1230, titolo=non lo so , AnnoPubblicazione=11121, NumeroPagine=18278]
+Catalogo [ISBN=10, titolo=il mio teosoro, AnnoPubblicazione=1111, NumeroPagine=1878]
