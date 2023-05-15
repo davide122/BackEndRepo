@@ -7,7 +7,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import java.util.ArrayList;
 public class Archive {
-	static File file = new File("SaveCV/saveo.txt");
+	static File Dati = new File("SaveCV/saveo.txt");
 	private Map<String, Catalogo> archive;
 
 	public  Archive() {
@@ -71,23 +71,41 @@ public class Archive {
 		  return archive.values().stream()
 	        .filter(Archive -> Archive instanceof Libri && ((Libri) Archive).getAutore() != null && ((Libri) Archive).getAutore().equals(autore))
 	        .map(Archive -> (Libri) Archive)
-	        .collect(Collectors.toList());
+	        .collect(Collectors.toList());//da controllare
 		 
 	
 	}
 	
 	
 	public void SaveData() {
+		System.out.println("*******************Save data***********************");
+
 		try {
 	        List<String> values = new ArrayList<>();
 	        for (Catalogo catalogo : archive.values()) {
 	            values.add(catalogo.toString());
 	        }
-	        FileUtils.writeLines(file, values);
+	        FileUtils.writeLines(Dati, values);
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
 	}
+	
+	public void LoadingData() {
+		System.out.println("*******************Loading data***********************");
+
+		try {
+			
+			String File = FileUtils.readFileToString(Dati, "UTF-8");
+			archive.put(File, null);
+System.out.println(File);
+
+		}catch(Exception o) {
+			System.out.println("404 NOT FOUND");
+
+		}
+	}
+	
 	
 	
 }

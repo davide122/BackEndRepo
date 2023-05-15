@@ -12,8 +12,8 @@ public class MainProject {
 		archive.Add(new Riviste("NSKDN", "giornale", "119", 3 ,Periodicita.Mensile));
 //----------------------------
 		//remove
-	//archive.Remove("10");  //for isbn
-	//archive.Remove("NSKDN");
+	archive.Remove("10");  //for isbn
+	archive.Remove("NSKDN");
 		//-------------------
 		
 		//Search 
@@ -21,7 +21,8 @@ public class MainProject {
 		archive.SearchDate("11211"); //for date
 		archive.SearchAuthor("animali");
 		//----------
-		archive.SaveData();
+		//archive.SaveData();
+		archive.LoadingData();
 	}
 
 }

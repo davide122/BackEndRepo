@@ -1,6 +1,6 @@
 
 public class Riviste extends Catalogo {
-	private Periodicita periodicita;
+	private  Periodicita periodicita ;
 
 	public Riviste(String iSBN, String titolo, String AnnoPubblicazione, int numeroPagine, Periodicita periodicita) {
 		super(iSBN, titolo, AnnoPubblicazione, numeroPagine);
