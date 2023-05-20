@@ -1,8 +1,19 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+
 public class Libri extends Catalogo{
+	
 private String autore;
 private String genere;
+
+
+	public Libri() {
+	super();
+}
 	public Libri(String iSBN, String titolo, String AnnoPubblicazione, int numeroPagine,String autore, String genere) {
 		super(iSBN, titolo, AnnoPubblicazione, numeroPagine);
 		

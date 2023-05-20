@@ -1,8 +1,17 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
+@Entity
+@Table(name="riviste")
 public class Riviste extends Catalogo {
-	private  Periodicita periodicita ;
+	public Riviste() {
+		super();
+	}
 
+	private  Periodicita periodicita ;
 	public Riviste(String iSBN, String titolo, String AnnoPubblicazione, int numeroPagine, Periodicita periodicita) {
 		super(iSBN, titolo, AnnoPubblicazione, numeroPagine);
 		

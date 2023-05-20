@@ -1,10 +1,24 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="cataloghi")
 public class Catalogo {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private String ISBN;
 private String titolo;
 private String AnnoPubblicazione;
 private int NumeroPagine;
+
+
+public Catalogo() {
+	super();
+}
 
 public Catalogo(String iSBN, String titolo, String AnnoPubblicazione, int numeroPagine) {
 	super();
