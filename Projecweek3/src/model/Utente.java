@@ -9,20 +9,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name="utenti")
-
 public class Utente {
 private String Surname;
 private LocalDate dataNascita;
 @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private String numeroditessera;
+private int numeroditessera;
 public Utente() {
 	super();
 }
-public Utente(String surname, LocalDate dataNascita) {
+public Utente(String surname, LocalDate dataNascita,int numeroditessera) {
 	super();
 	Surname = surname;
 	this.dataNascita = dataNascita;
+	this.numeroditessera=numeroditessera;
 }
 public String getSurname() {
 	return Surname;
@@ -35,6 +34,12 @@ public LocalDate getDataNascita() {
 }
 public void setDataNascita(LocalDate dataNascita) {
 	this.dataNascita = dataNascita;
+}
+public int getNumeroditessera() {
+	return numeroditessera;
+}
+public void setNumeroditessera(int numeroditessera) {
+	this.numeroditessera = numeroditessera;
 }
 
 }

@@ -2,9 +2,12 @@ package model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -13,16 +16,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name="prestiti")
 public class Prestito  {
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+private long id;
 	
-@ManyToOne
-
+	@ManyToOne
 private Utente utente;
+	
 @Enumerated(EnumType.STRING)
 private Elemento elemento;
-@Id
+@Column(name="inizioprestito")
 private LocalDate InizioPrestito;
-private LocalDate FineData = InizioPrestito.plusDays(30);
+@Column(name="finedata")
+private LocalDate FineData;
+@Column(name="effettivo")
 private LocalDate Effective;
 public Prestito() {
 	super();
@@ -57,6 +64,13 @@ public LocalDate getEffective() {
 }
 public void setEffective(LocalDate effective) {
 	Effective = effective;
+}
+
+public int getId() {
+	return (int) id;
+}
+public void setId(int id) {
+	this.id = id;
 }
 @Override
 public String toString() {
