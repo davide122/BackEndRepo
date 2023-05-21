@@ -1,5 +1,5 @@
 @echo off
-color 0a
+color 1a
 set /a version+=1
 git add .
 git commit -m "NEWSAVE %version%"
